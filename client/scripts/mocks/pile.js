@@ -107,7 +107,7 @@ define([
     method: 'GET',
     contentType: 'application/hal+json',
 
-    url: /\/tasklist\/piles\/([0-9a-z-]+)$/g,
+    url: /\/tasklist\/piles\/([^\/]+)/,
     data: ['pileId'],
     response: function(settings) {
       console.info('pile details', settings.url.match(/\/tasklist\/piles\/([0-9a-z-]+)$/g));
