@@ -13,5 +13,13 @@ The "_real_" issue queue for this project is the
    - [ ] text rendering in process variable type select
    - [ ] piles disappear when modal opens
    - [x] processes list replaced by search results
+   - [ ] sort the processes by name
+   - [ ] validate the variable according to its type
+   - [ ] could use a cancel button at the button
+   - [ ] should notify when process successfully starts
+   - [ ] processes start access
  - ### User authentication
+   - [ ] logout from other app does not reflect on the tasklist
    - [ ] notification messages at logout
+   - [ ] add tabindex to the login button
+   - [ ] link to other apps does not match access rights
