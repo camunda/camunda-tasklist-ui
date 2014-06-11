@@ -15,8 +15,8 @@ define([
 
 
   processModule.controller('processStartModalFormCtrl', [
-          '$scope', '$q', 'camLegacyProcessData',
-  function($scope,   $q,   camLegacyProcessData) {
+          '$scope', '$q', 'camTasklistNotifier', 'camLegacyProcessData',
+  function($scope,   $q,   camTasklistNotifier, camLegacyProcessData) {
     var emptyVariable = {
       name:   '',
       value:  '',
@@ -193,8 +193,14 @@ define([
           variables: vars
         }
       }).then(function(result) {
+        camTasklistNotifier.add({
+          type: 'success',
+          text: 'The process has been started.'
+        });
         close(result);
-      }, loadError);
+      }, function(err) {
+        camTasklistNotifier.add(err);
+      });
     };
   }]);
 

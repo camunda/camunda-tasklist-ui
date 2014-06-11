@@ -12,13 +12,13 @@ The "_real_" issue queue for this project is the
  - [ ] fonts rendering in firefox (mime type / headers)
  - [x] problem with "mocks" build
  - __Process start form__
-   - [ ] text rendering in process variable type select
+   - [ ] text rendering in process variable type select (only some backends)
    - [x] piles disappear when modal opens
    - [x] processes list replaced by search results
    - [x] sort the processes by name
    - [ ] validate the variable according to its type
    - [x] could use a cancel button at the bottom
-   - [ ] should notify when process successfully starts
+   - [x] should notify when process successfully starts
    - [ ] processes start access
    - [ ] add pager
    - [x] search for process provides results
