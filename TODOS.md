@@ -11,15 +11,16 @@ The "_real_" issue queue for this project is the
  - [ ] fonts rendering in IE (mime type / headers /redirection)
  - [ ] remove the livereload snippet in production
  - [x] problem with "mocks" build
- - __Process start form__ 
+ - __Process start form__
    - [ ] text rendering in process variable type select
-   - [ ] piles disappear when modal opens
+   - [x] piles disappear when modal opens
    - [x] processes list replaced by search results
    - [ ] sort the processes by name
    - [ ] validate the variable according to its type
-   - [ ] could use a cancel button at the button
+   - [ ] could use a cancel button at the bottom
    - [ ] should notify when process successfully starts
    - [ ] processes start access
+   - [ ] add pager
  - __User authentication__
    - [ ] logout from other app does not reflect on the tasklist
    - [ ] notification messages at logout
