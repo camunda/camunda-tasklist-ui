@@ -15,9 +15,9 @@ The "_real_" issue queue for this project is the
    - [ ] text rendering in process variable type select
    - [x] piles disappear when modal opens
    - [x] processes list replaced by search results
-   - [ ] sort the processes by name
+   - [x] sort the processes by name
    - [ ] validate the variable according to its type
-   - [ ] could use a cancel button at the bottom
+   - [x] could use a cancel button at the bottom
    - [ ] should notify when process successfully starts
    - [ ] processes start access
    - [ ] add pager

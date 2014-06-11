@@ -134,7 +134,15 @@ define([
         .then(function(processes) {
           $scope.loadingProcesses = false;
 
-          $scope.processes = processes;
+          $scope.processes = processes.sort(function(a, b) {
+            var aName = (a.name || a.key).toLowerCase();
+            var bName = (b.name || b.key).toLowerCase();
+            if (aName < bName)
+               return -1;
+            if (aName > bName)
+              return 1;
+            return 0;
+          });
         }, loadError);
       }, loadError);
     };
