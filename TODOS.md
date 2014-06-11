@@ -8,8 +8,8 @@ The "_real_" issue queue for this project is the
 
 
  - [ ] favicon rendering (probably mime type)
- - [ ] fonts rendering in IE (mime type / headers /redirection)
- - [ ] remove the livereload snippet in production
+ - [ ] fonts rendering in IE (mime type / headers / redirection)
+ - [ ] fonts rendering in firefox (mime type / headers)
  - [x] problem with "mocks" build
  - __Process start form__
    - [ ] text rendering in process variable type select
@@ -21,6 +21,7 @@ The "_real_" issue queue for this project is the
    - [ ] should notify when process successfully starts
    - [ ] processes start access
    - [ ] add pager
+   - [x] search for process provides results
  - __User authentication__
    - [ ] logout from other app does not reflect on the tasklist
    - [ ] notification messages at logout
