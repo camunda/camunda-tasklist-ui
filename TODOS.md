@@ -20,6 +20,7 @@ The "_real_" issue queue for this project is the
    - [ ] could use a cancel button at the button
    - [ ] should notify when process successfully starts
    - [ ] processes start access
+   - [ } search for process provides results
  - __User authentication__
    - [ ] logout from other app does not reflect on the tasklist
    - [ ] notification messages at logout
