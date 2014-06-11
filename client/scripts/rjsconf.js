@@ -24,11 +24,10 @@ define(function() {
 
 
       'camunda-tasklist-ui':        'scripts',
-      'camunda-tasklist-ui-mocks':  'scripts/mocks/index',
 
 
       'jquery-mockjax':             'bower_components/jquery-mockjax/jquery.mockjax',
-      'camunda-tasklist-ui/mocks':  'scripts/mocks',
+      'camunda-tasklist-ui-mocks':  'scripts/mocks',
       'uuid':                       'bower_components/node-uuid/uuid',
       'fixturer':                   'bower_components/fixturer/index',
       'underscore':                 'bower_components/underscore/index',
@@ -124,7 +123,7 @@ define(function() {
       },
 
       {
-        name: 'camunda-tasklist-ui/mocks',
+        name: 'camunda-tasklist-ui-mocks',
         main: 'index'
       }
     ]

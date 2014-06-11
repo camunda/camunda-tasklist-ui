@@ -5,7 +5,7 @@ define('camunda-tasklist-ui', [
            'camunda-tasklist-ui/rjsconf',
            'camunda-tasklist-ui/utils'
 ], function(rjsConf, utils) {
-  rjsConf.shim['camunda-tasklist-ui'].push('camunda-tasklist-ui/mocks');
+  rjsConf.shim['camunda-tasklist-ui'].push('camunda-tasklist-ui-mocks');
   var tasklistConf = typeof window !== 'undefined' ? (window.tasklistConf || {}) : {};
 
   /**

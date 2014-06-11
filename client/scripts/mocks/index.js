@@ -2,11 +2,11 @@
 if (typeof define !== 'function') { var define = require('amdefine')(module); }
 define([
            'angular',
-           'camunda-tasklist-ui/mocks/pile',
-           'camunda-tasklist-ui/mocks/task',
-           'camunda-tasklist-ui/mocks/user',
-           'camunda-tasklist-ui/mocks/session',
-           'camunda-tasklist-ui/mocks/process'
+           'camunda-tasklist-ui-mocks/pile',
+           'camunda-tasklist-ui-mocks/task',
+           'camunda-tasklist-ui-mocks/user',
+           'camunda-tasklist-ui-mocks/session',
+           'camunda-tasklist-ui-mocks/process'
 ], function(angular) {
 
   /**
