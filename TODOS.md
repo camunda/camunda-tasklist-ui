@@ -9,7 +9,7 @@ The "_real_" issue queue for this project is the
 
  - [ ] favicon rendering (probably mime type)
  - [ ] fonts rendering in IE (mime type / headers /redirection)
- - [ ] remove the livereload snippet in production
+ - [ ] fonts rendering in firefox (headers)
  - [x] problem with "mocks" build
  - __Process start form__ 
    - [ ] text rendering in process variable type select
