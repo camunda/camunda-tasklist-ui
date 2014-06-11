@@ -24,6 +24,7 @@ define(function() {
 
 
       'camunda-tasklist-ui':        'scripts',
+      'camunda-tasklist-ui-mocks':  'scripts/mocks/index',
 
 
       'jquery-mockjax':             'bower_components/jquery-mockjax/jquery.mockjax',
@@ -79,7 +80,7 @@ define(function() {
       'jquery-mockjax':             ['jquery'],
       'underscore.string':          ['underscore'],
       'fixturer':                   ['underscore.string'],
-      'camunda-tasklist-ui/mocks':  [
+      'camunda-tasklist-ui-mocks':  [
                                       'uuid',
                                       'fixturer',
                                       'angular',
