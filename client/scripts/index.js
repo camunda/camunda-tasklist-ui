@@ -85,12 +85,6 @@ define('camunda-tasklist-ui', [
         })
 
 
-        .when('/processes', {
-          template: tasklistTemplate,
-          controller: 'processStartCtrl'
-        })
-
-
         .when('/piles/new', {
           template: tasklistTemplate,
           controller: 'pileNewCtrl'
