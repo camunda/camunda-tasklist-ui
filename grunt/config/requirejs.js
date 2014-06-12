@@ -108,9 +108,9 @@ module.exports = function(config) {
 
   if (process.env.RJS_OPTIMIZATION) {
     rConf.options.optimize = process.env.RJS_OPTIMIZATION;
-    if (process.env.RJS_OPTIMIZATION === 'none') {
-      rConf.options.generateSourceMaps = false;
-    }
+    // if (process.env.RJS_OPTIMIZATION === 'none') {
+    //   rConf.options.generateSourceMaps = false;
+    // }
   }
 
 
