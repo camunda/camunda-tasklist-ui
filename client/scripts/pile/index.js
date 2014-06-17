@@ -198,7 +198,7 @@ define([
             }, function(err) {
               console.warn('tasklist.pile.current tasks', err);
             });
-        };
+        }
 
 
         scope.pageChange = loadItems;
