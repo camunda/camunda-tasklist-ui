@@ -224,7 +224,7 @@ define(function() {
         }
         {
           name: 'followUpBeforeOrNotExistent',
-          label: 'Follow Up Before or Not Existant',
+          label: 'Follow Up Before or Not Existent',
           expressionSupport: true,
           help: dateExpLangHelp,
           validate: dateValidate
