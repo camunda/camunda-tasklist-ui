@@ -1,57 +1,17 @@
 module.exports = function() {
   'use strict';
-  var _ = require('underscore');
-  var path = require('path');
-  var rjsConfPath = path.resolve('./client/scripts/require-conf');
-  var rjsConf = require(rjsConfPath);
+  var commons = require('camunda-commons-ui');
+  var _ = commons.utils._;
+  var rjsConf = commons.requirejs();
 
-  // NOTE: we use "./../" in this file, because the "working directory"
-  // a.k.a. "basePath" property is actually "./client"
   var deps = [
-    'camunda-tasklist-ui/require-conf',
-    './../node_modules/requirejs/require',
-    // 'require-conf',
-    // 'require',
-
-    'camunda-commons-ui/auth',
-    'jquery',
-    'angular',
-    'moment',
-
-    'camunda-bpm-sdk',
-
-    'angular-bootstrap',
-    'bootstrap/collapse',
-    'angular-route',
-    'angular-animate',
-    'angular-moment',
-    'angular-data-depend',
-    'angular-translate',
+    'requirejs',
+    'camunda-commons-ui',
     'angular-resource',
-    'bpmn-js',
-    'lodash',
-    'sax',
-    'snap-svg',
-    'placeholders-js/utils',
-    'placeholders-js/main',
-    'placeholders-js/adapters/placeholders.jquery'
+    'angular-sanitize',
+    'angular-route',
+    'angular-bootstrap'
   ];
-
-
-
-
-  _.extend(rjsConf.paths, {
-    'camunda-bpm-sdk-js':   './../node_modules/camunda-bpm-sdk-js/dist',
-    'camunda-commons-ui':   './../node_modules/camunda-commons-ui/lib',
-
-    'require':              './../node_modules/requirejs/require',
-    'require-conf':         './../client/scripts/require-conf',
-
-    // the localescompile task puts the generated files in the build directory
-    // and we want them to be included in the build
-    'locales':              './../<%= buildTarget %>/locales'
-  });
-
 
   var rConf = {
     options: {
@@ -66,9 +26,14 @@ module.exports = function() {
 
       baseUrl: './<%= pkg.gruntConfig.clientDir %>',
 
-      paths: rjsConf.paths,
-      shim: rjsConf.shim,
-      packages: rjsConf.packages
+      paths: _.extend(rjsConf.paths, {
+        // 'tasklist':                       'scripts',
+        'camunda-tasklist-ui':            'scripts/camunda-tasklist-ui',
+      }),
+
+      shim: _.extend(rjsConf.shim, {}),
+
+      packages: rjsConf.packages.concat([])
     },
 
 
@@ -86,7 +51,7 @@ module.exports = function() {
         name: 'camunda-tasklist-ui',
         out: '<%= buildTarget %>/scripts/<%= pkg.name %>.js',
         exclude: deps,
-        include: rjsConf.shim['camunda-tasklist-ui']
+        include: []
       }
     }
   };

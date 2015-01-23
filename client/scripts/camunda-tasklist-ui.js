@@ -1,10 +1,6 @@
 /* global define, require, console, document, window, setTimeout: false */
 'use strict';
 
-define('snap-win', ['snap-svg'], function(snap) {
-  window.Snap = snap;
-});
-
 var pluginPackages = window.PLUGIN_PACKAGES || [];
 var pluginDependencies = window.PLUGIN_DEPENDENCIES || [];
 
@@ -13,9 +9,11 @@ require({
 });
 
 define('camunda-tasklist-ui', [
-  'camunda-tasklist-ui/require-conf',
-  'angular',
-  'snap-win'
+  'camunda-commons-ui',
+  'angular-resource',
+  'angular-sanitize',
+  'angular-route',
+  'angular-bootstrap'
 ].concat(pluginDependencies.map(function(plugin) {
       return plugin.requirePackageName;
   })), function(
@@ -33,17 +31,17 @@ define('camunda-tasklist-ui', [
   var tasklistApp;
 
 
-  var appModules = rjsConf.shim['camunda-tasklist-ui'];
+  var appModules = [];//rjsConf.shim['camunda-tasklist-ui'];
 
-  
+
   var deps = [
     'angular',
-    'text!camunda-tasklist-ui/index.html'
+    'text!./index.html'
   ].concat(appModules);
 
 
   // converts AMD paths to angular module names
-  // "camunda-tasklist-ui/filter" will be "cam.tasklist.filter"
+  // "./scripts/filter" will be "cam.tasklist.filter"
   function rj2ngNames(names) {
     var name, translated = [];
     for (var n = 0; n < names.length; n++) {
@@ -119,19 +117,19 @@ define('camunda-tasklist-ui', [
     tasklistApp.directive('camWidgetInlineField', camWidgetInlineField);
 
 
-    tasklistApp.factory('assignNotification', require('camunda-tasklist-ui/services/cam-tasklist-assign-notification'));
-    tasklistApp.provider('configuration', require('camunda-tasklist-ui/services/cam-tasklist-configuration'));
+    tasklistApp.factory('assignNotification', require('./scripts/services/cam-tasklist-assign-notification'));
+    tasklistApp.provider('configuration', require('./scripts/services/cam-tasklist-configuration'));
 
-    require('camunda-tasklist-ui/config/locales')(tasklistApp, uriConfig['app-root']);
-    require('camunda-tasklist-ui/config/uris')(tasklistApp, uriConfig);
+    require('./scripts/config/locales')(tasklistApp, uriConfig['app-root']);
+    require('./scripts/config/uris')(tasklistApp, uriConfig);
 
 
-    tasklistApp.config(require('camunda-tasklist-ui/config/routes'));
-    tasklistApp.config(require('camunda-tasklist-ui/config/date'));
-    tasklistApp.config(require('camunda-tasklist-ui/config/tooltip'));
+    tasklistApp.config(require('./scripts/config/routes'));
+    tasklistApp.config(require('./scripts/config/date'));
+    tasklistApp.config(require('./scripts/config/tooltip'));
 
-    tasklistApp.controller('camTasklistAppCtrl', require('camunda-tasklist-ui/controller/cam-tasklist-app-ctrl'));
-    tasklistApp.controller('camTasklistViewCtrl', require('camunda-tasklist-ui/controller/cam-tasklist-view-ctrl'));
+    tasklistApp.controller('camTasklistAppCtrl', require('./scripts/controller/cam-tasklist-app-ctrl'));
+    tasklistApp.controller('camTasklistViewCtrl', require('./scripts/controller/cam-tasklist-view-ctrl'));
 
 
     // The `cam.tasklist` AngularJS module is now available but not yet bootstraped,

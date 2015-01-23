@@ -1,6 +1,5 @@
 define([
-  'text!camunda-tasklist-ui/process/modals/cam-tasklist-process-start-modal.html'
-
+  'text!./../modals/cam-tasklist-process-start-modal.html'
 ], function(
   template
 ) {

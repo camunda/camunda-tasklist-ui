@@ -1,6 +1,6 @@
 define([
-  'text!camunda-tasklist-ui/index.html',
-  'text!camunda-tasklist-ui/user/controller/cam-auth-login.html'
+  'text!./../index.html',
+  'text!./../user/controller/cam-auth-login.html'
 ], function(
   tasklistTemplate,
   userLoginTemplate
