@@ -1,11 +1,14 @@
 'use strict';
 
+var $ = require('jquery');
+window.jQuery = $;
+
 window['camunda-commons-ui'] = require('camunda-commons-ui/lib');
 window['camunda-bpm-sdk-js'] = require('camunda-bpm-sdk-js/lib/angularjs/index');
 require('angular-data-depend');
 
-var $ = require('jquery');
 var angular = require('angular');
+
 
   /**
    * @namespace cam
