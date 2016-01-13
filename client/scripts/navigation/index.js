@@ -11,7 +11,7 @@ define([
   'use strict';
 
   var navigationModule = angular.module('cam.tasklist.navigation', [
-    require('camunda-commons-ui/util/index').name,
+    require('camunda-commons-ui/lib/util/index').name,
     'ui.bootstrap',
     'cam.tasklist.user'
   ]);
