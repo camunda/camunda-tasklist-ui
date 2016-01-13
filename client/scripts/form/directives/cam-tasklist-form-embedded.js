@@ -1,14 +1,11 @@
-define([
-  'angular',
-  'text!./cam-tasklist-form-embedded.html'
-], function(
-  angular,
-  template
-) {
-  'use strict';
+'use strict';
+var fs = require('fs');
 
+var template = fs.readFileSync(__dirname + '/cam-tasklist-form-embedded.html', 'utf8');
 
-  return [
+var angular = require('angular');
+
+  module.exports = [
     'CamForm',
     'camAPI',
     '$timeout',
@@ -118,5 +115,3 @@ define([
     };
 
   }];
-
-});

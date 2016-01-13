@@ -1,7 +1,7 @@
 'use strict';
 
 window['camunda-commons-ui'] = require('camunda-commons-ui/lib');
-window['camunda-bpm-sdk-js'] = require('camunda-bpm-sdk-js');
+window['camunda-bpm-sdk-js'] = require('camunda-bpm-sdk-js/lib/angularjs/index');
 require('angular-data-depend');
 
 var $ = require('jquery');
@@ -35,7 +35,7 @@ var angular = require('angular');
 
   module.exports = function(pluginDependencies) {
     function parseUriConfig() {
-      var $baseTag = angular.element('base');
+      var $baseTag = $('base');
       var config = {};
       var names = ['href', 'app-root', 'admin-api', 'tasklist-api', 'engine-api'];
       for(var i = 0; i < names.length; i++) {

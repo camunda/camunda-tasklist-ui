@@ -1,15 +1,13 @@
-define([
-  'angular',
-  'text!./cam-tasklist-form-generic.html'
-], function(
-  angular,
-  template
-) {
-  'use strict';
+'use strict';
+var fs = require('fs');
+
+var template = fs.readFileSync(__dirname + '/cam-tasklist-form-generic.html', 'utf8');
+
+var angular = require('angular');
 
   function noop () {}
 
-  return [
+  module.exports = [
     'CamForm',
     'camAPI',
   function(
@@ -131,4 +129,3 @@ define([
       }
     };
   }];
-});
