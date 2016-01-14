@@ -19,7 +19,7 @@
     "angular-moment": "^1.0.0-beta.3",
     "angular-route": "^1.2.29",
     "camunda-bpm-sdk-js": "git://github.com/camunda/camunda-bpm-sdk-js#master",
-    "camunda-commons-ui": "git://github.com/camunda/camunda-commons-ui#master",
+    "camunda-commons-ui": "git://github.com/camunda/camunda-commons-ui#commonjs",
     "jquery": "^2.1.1",
     "moment": "^2.11.1",
     "requirejs": "^2.1.22"
