@@ -7,16 +7,6 @@ module.exports = function(config, browserifyConfig) {
         standalone: 'CamundaTasklistUi'
       },
       watch: true,
-      transform: [
-        [ 'exposify',
-          {
-            expose: {
-             // do not embed angular, instead, use window.angular
-             'angular': 'angular',
-            }
-          }
-        ]
-      ],
       postBundleCB: function(err, src, next) {
 
         console.log('post bundling', err);

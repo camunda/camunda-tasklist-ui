@@ -1,28 +1,37 @@
 define('camunda-tasklist-bootstrap', [
-  'globalize',
-  'ngDefine',
-  'angular'
-], function (globalize) {
+  './scripts/camunda-tasklist-ui'
+  //'globalize',
+  // 'ngDefine',
+  // 'angular'
+], function (camundaTasklistUi) {
   'use strict';
 
-
-  var pluginPackages = window.PLUGIN_PACKAGES || [];
-  var pluginDependencies = window.PLUGIN_DEPENDENCIES || [];
-
   require.config({
-    packages: pluginPackages,
-    baseUrl: '../'
+    baseUrl: '../../../lib'
   });
 
-  globalize(require, ['angular', 'camunda-commons-ui', 'camunda-bpm-sdk-js']);
+  require(['globalize'], function(globalize) {
+    var requirePackages = {};
 
-  require(['./scripts/camunda-tasklist-ui'], function(camundaTasklistUi) {
+    camundaTasklistUi.exposePackages(requirePackages);
+    globalize(require, ['angular', 'camunda-commons-ui', 'camunda-bpm-sdk-js'], requirePackages);
 
-    var dependencies = [].concat(pluginDependencies.map(function(plugin) {
+    var pluginPackages = window.PLUGIN_PACKAGES || [];
+    var pluginDependencies = window.PLUGIN_DEPENDENCIES || [];
+
+    require.config({
+      packages: pluginPackages,
+      baseUrl: '../',
+      paths: {
+        ngDefine: '../../lib/ngDefine'
+      }
+    });
+
+    var dependencies = ['angular', 'ngDefine'].concat(pluginDependencies.map(function(plugin) {
       return plugin.requirePackageName;
     }));
 
-    require(dependencies, function() {
+    require(dependencies, function(angular) {
 
       // we now loaded the tasklist and the plugins, great
       // before we start initializing the tasklist though (and leave the requirejs context),
@@ -93,13 +102,7 @@ define('camunda-tasklist-bootstrap', [
     });
 
   });
-});
 
-require.config({
-  baseUrl: '../../../lib',
-  shim: {
-    angular: {exports: 'angular'}
-  }
 });
 
 require(['camunda-tasklist-bootstrap'], function(){});

@@ -3,12 +3,11 @@
 var $ = require('jquery');
 window.jQuery = $;
 
-window['camunda-commons-ui'] = require('camunda-commons-ui/lib');
-window['camunda-bpm-sdk-js'] = require('camunda-bpm-sdk-js/lib/angularjs/index');
+var commons = require('camunda-commons-ui/lib');
+var sdk = require('camunda-bpm-sdk-js/lib/angularjs/index');
 require('angular-data-depend');
 
 var angular = require('angular');
-
 
   /**
    * @namespace cam
@@ -35,8 +34,8 @@ var angular = require('angular');
     });
   }
 
-
   module.exports = function(pluginDependencies) {
+
     function parseUriConfig() {
       var $baseTag = $('base');
       var config = {};
@@ -87,6 +86,11 @@ var angular = require('angular');
 
   };
 
+  module.exports.exposePackages = function(container) {
+    container.angular = angular;
+    container['camunda-commons-ui'] = commons;
+    container['camunda-bpm-sdk-js'] = sdk;
+  };
 
   /* live-reload
   // loads livereload client library (without breaking other scripts execution)
