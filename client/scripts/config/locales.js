@@ -1,5 +1,5 @@
 'use strict';
-var moment = require('moment'),
+var moment = require('camunda-commons-ui/lib/util/require_helper')('moment'),
     angular = require('angular');
 
   module.exports = function(ngModule, appRoot) {

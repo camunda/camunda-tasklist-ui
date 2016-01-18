@@ -4,7 +4,8 @@ module.exports = function(config, browserifyConfig) {
   browserifyConfig.tasklist_scripts = {
     options: {
       browserifyOptions: {
-        standalone: 'CamundaTasklistUi'
+        standalone: 'CamundaTasklistUi',
+        debug: true
       },
       watch: true,
       postBundleCB: function(err, src, next) {
