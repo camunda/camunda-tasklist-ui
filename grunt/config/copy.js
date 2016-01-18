@@ -91,7 +91,7 @@ module.exports = function(config, copyConf) {
           expand: true,
           cwd: '<%= pkg.gruntConfig.tasklistSourceDir %>/images',
           src: ['**'],
-          dest: '<%= pkg.gruntConfig.tasklistBuildTarget %>/images/'
+          dest: '<%= pkg.gruntConfig.tasklistBuildTarget %>/assets/images/'
         },
         {
           expand: true,
