@@ -1,7 +1,6 @@
 'use strict';
 
 var angular = require('angular'),
-  moment = require('moment'),
 
   taskDirective = require('./directives/cam-tasklist-task'),
   taskMetaDirective = require('./directives/cam-tasklist-task-meta'),
