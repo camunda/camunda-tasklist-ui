@@ -13,8 +13,8 @@ define([
 
   var searchConfig = JSON.parse(searchConfigJSON);
 
-  var parseValue = function(value) {
-    if(!isNaN(value) && value.trim() !== '') {
+  var parseValue = function(value, enforceString) {
+    if(!isNaN(value) && value.trim() !== '' && !enforceString) {
       // value must be transformed to number
       return +value;
     }
@@ -96,10 +96,10 @@ define([
           query[search.type.value.key].push({
             name: typeof search.name.value === 'object' ? search.name.value.key : search.name.value,
             operator: search.operator.value.key,
-            value: sanitizeValue(parseValue(search.value.value), search.operator.value.key)
+            value: sanitizeValue(parseValue(search.value.value, search.enforceString), search.operator.value.key)
           });
         } else {
-          query[sanitizeProperty(search, search.type.value.key, search.operator.value.key, search.value.value)] = sanitizeValue(parseValue(search.value.value), search.operator.value.key);
+          query[sanitizeProperty(search, search.type.value.key, search.operator.value.key, search.value.value)] = sanitizeValue(parseValue(search.value.value, search.enforceString), search.operator.value.key);
         }
       });
 
