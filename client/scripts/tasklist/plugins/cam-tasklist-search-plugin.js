@@ -14,7 +14,10 @@ define([
   var searchConfig = JSON.parse(searchConfigJSON);
 
   var parseValue = function(value, enforceString) {
-    if(!isNaN(value) && value.trim() !== '' && !enforceString) {
+    if(enforceString) {
+      return '' + enforceString;
+    }
+    if(!isNaN(value) && value.trim() !== '') {
       // value must be transformed to number
       return +value;
     }
