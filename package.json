@@ -1,6 +1,6 @@
 {
   "name": "camunda-tasklist-ui",
-  "version": "7.4.7",
+  "version": "7.4.8-SNAPSHOT",
   "gruntConfig": {
     "connectPort": 8010,
     "livereloadPort": 8011,
