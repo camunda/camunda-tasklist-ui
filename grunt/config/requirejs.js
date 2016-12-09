@@ -60,10 +60,6 @@ module.exports = function(config, requireJsConfig) {
           main: 'index'
         },
         {
-          name: 'user',
-          main: 'index'
-        },
-        {
           name: 'widgets',
           main: 'index'
         },
@@ -100,7 +96,6 @@ module.exports = function(config, requireJsConfig) {
           'scripts/services/cam-tasklist-assign-notification',
           'scripts/services/cam-tasklist-configuration',
 
-          'scripts/user/index',
           'scripts/variable/index',
           'scripts/tasklist/index',
           'scripts/task/index',

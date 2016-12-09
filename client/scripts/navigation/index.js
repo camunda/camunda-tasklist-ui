@@ -12,8 +12,7 @@ define([
 
   var navigationModule = angular.module('cam.tasklist.navigation', [
     require('camunda-commons-ui/util/index').name,
-    'ui.bootstrap',
-    'cam.tasklist.user'
+    'ui.bootstrap'
   ]);
 
   navigationModule.controller('camHeaderViewsCtrl', camHeaderViewsCtrl);

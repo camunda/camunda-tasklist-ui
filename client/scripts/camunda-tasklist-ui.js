@@ -14,7 +14,6 @@ define('camunda-tasklist-ui', [
   'scripts/services/cam-tasklist-assign-notification',
   'scripts/services/cam-tasklist-configuration',
 
-  'scripts/user/index',
   'scripts/variable/index',
   'scripts/tasklist/index',
   'scripts/task/index',
@@ -91,7 +90,6 @@ define('camunda-tasklist-ui', [
       'pascalprecht.translate',
       'ngRoute',
       'dataDepend',
-      require('scripts/user/index').name,
       require('scripts/variable/index').name,
       require('scripts/tasklist/index').name,
       require('scripts/task/index').name,
